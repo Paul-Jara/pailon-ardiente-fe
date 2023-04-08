@@ -1,5 +1,16 @@
 # Getting Started with Create React App
 
+# Datos importantes
+Este es el quito proyecto que se realizó para el Ucamp de Full stack con MERN
+
+Pagina donde fue deployado el proyecto:
+
+    https://effervescent-quokka-157dc1.netlify.app/
+
+
+Raul Gonzales tiene acceso al repositorio utilizado para subir este proyecto en Github
+    https://github.com/Paul-Jara/pailon-ardiente-fe
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
