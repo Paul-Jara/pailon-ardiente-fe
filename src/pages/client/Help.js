@@ -2,38 +2,45 @@ const Help = () => {
     return (
         <section>
             <article className="article-about">
-                <h3>Acerca de nosotros</h3>
+                <h3>Home</h3>
                 <lu>
-                    <li>Es una página en donde se muestra la informacion del restaurante, ubicación y datos de contacto.</li>
+                    <li>Es una página en donde se imagenes de los productos y servicios.</li>
                 </lu>
-                <h3>Reservación</h3>
+                <h3>Catalogo</h3>
                 <lu>
-                    <li>Despliega un formulario que permite realizar una reservación en el restaurante.</li>
+                    <li>Es una pagina que muestra un menú lateral que permite seleccionar los productos que se venden en la página</li>
                 </lu>
-                <h3>Mi orden</h3>
+                <h3>Carrito</h3>
                 <lu>
-                    <li>Despliega una pagina en donde que permite visualizar los elementos que han sido agregados al carrito de compras.</li>
+                    <li>Despliega los productos que se hayan seleccionado en el catalogo y enviado al carrito de compras</li>
                 </lu>
-                <h3>Menú</h3>
+                <h3>Mis ordenes</h3>
                 <lu>
-                    <li>Permite agregar elementos al carrito de compras, previamente se requeriere que se ingrese el número de la mesa en la que el comenzal se encuetra.</li>
-                    <li>Se muestran los elementos del menu acompañados de un boton que redirige a la pagina de agregar el item al carrito.</li>
-                    <li>Tiene un botoón que dirige a "Mi orden".</li>
+                    <li>Muestra las ordenes de compra que se han realizado el cliente autenticado y permite ver el detalle de la orden de compra</li>
                 </lu>
-                <h3>Agregar item a la orden</h3>
+                <h3>Usuarios</h3>
                 <lu>
-                    <li>Muestra la información del item que se desea agregar y permite modificar la cantidad que se desea.</li>
-                    <li>La información se almacena en el local storage hasta que se confirme la orden.</li>
+                    <li>Muestra la lista de usuarios que se hayan registrado a la tienda</li>
                 </lu>
-                <h3>Ayuda</h3>
+                <h3>Administrar ordenes</h3>
                 <lu>
-                    <li>Despliega información importante sobre la aplicación.</li>
+                    <li>Muestra la lista completa de ordenes de compra que hayan realizado todos los clientes</li>
                 </lu>
-                <h3>Administración</h3>
+                <h3>Mi perfil</h3>
                 <lu>
-                    <li>Permite cargar el menú a la base de datos Firebase.</li>
-                    <li>Permite eliminar el menú de la base de datos Firebase.</li>
-                    <li>Permite visualizar las reservaciones que se han realizado.</li>
+                    <li>Muestra una pagina en donde el usuario puede actualizar sus datos de contacto y su contraseña</li>
+                </lu>
+                <h3>Cerrar seción</h3>
+                <lu>
+                    <li>Link que permite salir de la seción y redirige a home</li>
+                </lu>
+                <h3>Registro</h3>
+                <lu>
+                    <li>Formulario para registrase a la aplicación</li>
+                </lu>
+                <h3>Iniciar seción</h3>
+                <lu>
+                    <li>Formulario iniciar seción</li>
                 </lu>
             </article>
         </section>
