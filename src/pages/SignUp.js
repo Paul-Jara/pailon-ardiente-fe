@@ -1,5 +1,5 @@
 import { Link, Navigate, useNavigate } from 'react-router-dom'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 import FormInput from '../component/FormInput'
 import { UserContext } from '../context/UserContext'
@@ -7,6 +7,7 @@ import { UserContext } from '../context/UserContext'
 const SignUp = () => {
     const { authStatus, handleChange, registerUser, verifyPassword, verifyToken } = useContext(UserContext)
     const navigate = useNavigate()
+    const [used, setUsed] = useState()
 
     const register = async (event) => {
         event.preventDefault()
@@ -23,11 +24,11 @@ const SignUp = () => {
     }
 
     useEffect(() => {
-        const checkLogin = async () => {
-            await verifyToken()
+        if(!used) {
+            verifyToken()
+            setUsed(true)
         }
-        checkLogin()
-    }, [])
+    }, [verifyToken, used])
 
     if (authStatus) {
         return <Navigate to='/catalog/'></Navigate>

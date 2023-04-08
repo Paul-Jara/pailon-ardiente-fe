@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import FormInput from '../component/FormInput'
 import { UserContext } from '../context/UserContext'
@@ -6,6 +6,7 @@ import { UserContext } from '../context/UserContext'
 const Login = () => {
     const { authStatus, handleChange, loginUser, verifyToken } = useContext(UserContext)
     const navigate = useNavigate()
+    const [used, setUsed] = useState()
 
     const sendData = async (event) => {
         event.preventDefault()
@@ -14,11 +15,11 @@ const Login = () => {
     }
 
     useEffect(() => {
-        const checkLogin = async () => {
-            await verifyToken()
+        if(!used) {
+            verifyToken()
+            setUsed(true)
         }
-        checkLogin()
-    }, [])
+    }, [verifyToken, used])
 
     if (authStatus) {
         return <Navigate to='/catalog/'></Navigate>

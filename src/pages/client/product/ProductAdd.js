@@ -23,7 +23,7 @@ const ProductAdd = () => {
             }
         }
         fetchProduct()
-    }, [])
+    }, [productId])
 
     const addToCart = async () => {
         await axiosClient.put('/api/cart/', {
