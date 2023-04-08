@@ -28,7 +28,7 @@ const AdminOrder = () => {
             }
         }
         loadOrder()
-    }, [])
+    }, [orderId])
 
     const data = () => {
         return order?.items.map(item => {

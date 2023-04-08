@@ -21,8 +21,8 @@ const Cart = () => {
 
     const loadData = async () => {
         const res = await axiosClient.get('/api/cart')
-        setCart(res.data.data)
-        setInvoiceCart(res.data.data.invoiceCart)
+        setCart(res.data?.data)
+        setInvoiceCart(res.data?.data?.invoiceCart)
     }
 
     const handleOrder = () => {

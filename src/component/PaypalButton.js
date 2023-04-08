@@ -4,7 +4,6 @@ import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js'
 const PAYPAL_CLIENT_ID = process.env.REACT_APP_PAYPAL_CLIENT_ID
 
 function PaypalButton({ value, handleAction }) {
-    console.log(value)
     return (
         <PayPalScriptProvider options={{ 'client-id': PAYPAL_CLIENT_ID }}>
             <PayPalButtons
