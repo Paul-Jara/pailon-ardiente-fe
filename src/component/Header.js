@@ -6,12 +6,15 @@ export const Header = () => {
     const { logoutUser, authStatus } = useContext(UserContext)
 
     return (
-        <header className="container">
+        <header className="sticky-top container bg-dark">
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
                     <img alt="Pailón Ardiente" src={require('../images/icon.png')} className="navbar-brand m-2" />
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" 
-                        data-bs-target="#navmenu" aria-controls="navbarSupportedContent" 
+                    <div className="text-center">
+                        <h1 className="title align-middle fs-1">Pailón Ardiente</h1>
+                    </div>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navmenu" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

@@ -1,5 +1,10 @@
+main {
+	margin-bottom: 180px;
+	/* Altura del footer */
+}
+
 .title {
-	font-size: 45px
+	color: white;
 }
 
 .row {
@@ -33,5 +38,11 @@
 }
 
 a:hover {
-	color: #43a4f8 !important ;
+	color: #43a4f8 !important;
+}
+
+@media (max-width: 576px) {
+	footer {
+		position: static !important;
+	}
 }
