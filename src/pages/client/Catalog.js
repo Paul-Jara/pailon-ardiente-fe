@@ -22,15 +22,14 @@ const Catalog = () => {
 
     return (
         <section className="row">
-            <article className="col">
+            <article className="col-auto me-auto">
                 <CategoryMenu />
             </article>
             <article className="col">
                 <Category
                     key={category}
                     category={category}
-                    products={products}
-                />
+                    products={products} />
             </article>
         </section>
     )

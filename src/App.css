@@ -41,6 +41,24 @@ a:hover {
 	color: #43a4f8 !important;
 }
 
+.card-flex {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-bottom: 50px;
+	gap: 1rem;
+	justify-content: center;
+}
+
+.product-card {
+	width: 20rem;
+}
+
+.card-image {
+	width: 15rem;
+	height: 15rem;
+}
+
 @media (max-width: 576px) {
 	footer {
 		position: static !important;
