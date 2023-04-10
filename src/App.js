@@ -14,8 +14,8 @@ import UserProfile from './pages/client/UserProfile'
 import Cart from './pages/client/Cart'
 import MessageSuccess from './pages/client/MessageSuccess'
 import Orders from './pages/client/order/Orders'
-import AdminOrders from './pages/admin/AdminOrders'
-import AdminOrder from './pages/admin/AdminOrder'
+import OrdersAdmin from './pages/admin/OrdersAdmin'
+import OrderAdmin from './pages/admin/OrderAdmin'
 import ProductDetail from './pages/client/product/ProductDetail'
 import OrderVerify from './pages/client/order/OrderVerify'
 
@@ -34,14 +34,14 @@ const App = () => {
             <Route path='/product/add/:productId' element={<ProductAdd />} />
             <Route path='/product/:productId' element={<ProductDetail />} />
             <Route path='/orders' element={<Orders />} />
-            <Route path='/admin/order/:orderId' element={<AdminOrder />} />
+            <Route path='/admin/order/:orderId' element={<OrderAdmin />} />
             <Route path='/users' element={<Users />} />
             <Route path='/user' element={<UserProfile />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/order/verify' element={<OrderVerify />} />
             <Route path='/order/success' element={<MessageSuccess />} />
             <Route path='/order/:orderId' element={<Order />} />
-            <Route path='/admin/orders' element={<AdminOrders />} />
+            <Route path='/admin/orders' element={<OrdersAdmin />} />
           </Route>
         </Route>
       </Routes>

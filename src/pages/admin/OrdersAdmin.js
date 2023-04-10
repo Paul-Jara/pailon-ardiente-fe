@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axiosClient from "../../config/axios";
 import { formatDate } from "../../helper/DateUtil";
 
-const AdminOrders = () => {
+const OrdersAdmin = () => {
     const navigate = useNavigate()
     const [orders, setOrders] = useState()
 
@@ -68,4 +68,4 @@ const AdminOrders = () => {
     )
 }
 
-export default AdminOrders;
+export default OrdersAdmin;

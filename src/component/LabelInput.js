@@ -14,7 +14,7 @@ const LabelInput = ({ labelText, type, setter, defaultValue, name, autoComplete,
                 id={name}
                 autoComplete={autoComplete}
                 placeholder={placeholder} 
-                readOnly={readOnly}
+                readOnly={readOnly === "true"}
                 className="form-control"
             />
         </div>

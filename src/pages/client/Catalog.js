@@ -11,7 +11,9 @@ const Catalog = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await axiosClient.get(`/api/product/category/${category}`)
+                const res = await axiosClient.get('/api/product/filter', {
+                    params: { category }
+                })
                 setProducts(res.data.data)
             } catch (error) {
                 console.log(error)

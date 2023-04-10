@@ -5,7 +5,7 @@ import axiosClient from "../../config/axios";
 import 'react-data-grid/lib/styles.css';
 import DataGrid from 'react-data-grid';
 
-const AdminOrder = () => {
+const OrderAdmin = () => {
     const params = useParams()
     const { orderId } = params
     const [order, setOrder] = useState()
@@ -87,4 +87,4 @@ const AdminOrder = () => {
     )
 }
 
-export default AdminOrder;
+export default OrderAdmin;

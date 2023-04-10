@@ -18,18 +18,18 @@ const CategoryMenu = () => {
     }, [])
 
     return (
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-products" aria-controls="nav-products" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="container-fluid">
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-products" aria-controls="nav-products" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="nav-products">
-                    <ul class="navbar-nav flex-column">
+                <div className="collapse navbar-collapse" id="nav-products">
+                    <ul className="navbar-nav flex-column">
                         {
                             categories?.map((category, index) => {
-                                return <li key={`category_${index}`} class="nav-item">
-                                            <Link to={`/catalog/${category}`} class="nav-link">{category}</Link>
-                                        </li>
+                                return <li key={`category_${index}`} className="nav-item">
+                                    <Link to={`/catalog/${category}`} className="nav-link">{category}</Link>
+                                </li>
                             })
                         }
                     </ul>
