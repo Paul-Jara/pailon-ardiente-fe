@@ -5,7 +5,7 @@ const ProductViewDetail = ({ product }) => {
             {product.subCategory && <h2>{product.subCategory}</h2>}
             <h3>{product.name}</h3>
             {product.smartDescription && <h4>{product.smartDescription}</h4>}
-            {product.code && <p>SKU: ${product.code}</p>}
+            {product.code && <p>SKU: {product.code}</p>}
             {product.description && <p>{product.description}</p>}
             <p>{product.vendor}</p>
             <p>Precio: {product.price}</p>
