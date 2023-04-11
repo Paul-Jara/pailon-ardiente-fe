@@ -65,6 +65,7 @@ export const UserProvider = ({ children }) => {
             setFormData({...formData, password:''})
             localStorage.setItem('user', JSON.stringify({...formData, password:''}))
             setAuthStatus(true)
+            axiosClient.defaults.headers.common['x-auth-token'] = res.data.token
         } catch (error) {
             console.log(error)
         }
@@ -72,6 +73,7 @@ export const UserProvider = ({ children }) => {
 
     const logoutUser = () => {
         localStorage.removeItem('token')
+        localStorage.removeItem('user')
         setUser(null)
         setAuthStatus(false)
         return <Navigate to="/login" />

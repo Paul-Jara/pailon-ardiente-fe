@@ -15,7 +15,7 @@ const Login = () => {
     }
 
     useEffect(() => {
-        if(!used) {
+        if (!used) {
             verifyToken()
             setUsed(true)
         }

@@ -14,7 +14,7 @@ const ProductViewDetail = ({ product }) => {
                     <h3>Stock:</h3>
                     <ul>
                         {Object.keys(product.stock).map(key => (
-                            <li key={key}>
+                            <li key={'productId_' + key}>
                                 {key}: {product.stock[key]}
                             </li>
                         ))}
@@ -22,11 +22,11 @@ const ProductViewDetail = ({ product }) => {
                 </div>
             )}
             {product.images && product.images.length && product.images.map((image, index) => (
-                <img src={image.url} alt={product.name} />
+                <img src={image.url} alt={product.name} key={`images_${index}`} />
             ))}
             {product.features && product.features.length > 0 && <ul>
-                {product.features.map(feature => (
-                    <li key={feature}>{feature}</li>
+                {product.features.map((feature, index) => (
+                    <li key={`feature_${index}`}>{feature}</li>
                 ))}
             </ul>}
             {product.care && product.care.length > 0 && (
@@ -34,7 +34,7 @@ const ProductViewDetail = ({ product }) => {
                     <h3>Care Instructions:</h3>
                     <ul>
                         {product.care.map(instruction => (
-                            <li key={instruction}>{instruction}</li>
+                            <li key={`instruction_${instruction}`}>{instruction}</li>
                         ))}
                     </ul>
                 </div>
