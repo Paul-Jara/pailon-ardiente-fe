@@ -12,10 +12,10 @@ const ProductCreate = () => {
     const [subCategory, setSubCategory] = useState('')
     const [price, setPrice] = useState('')
     const [code, setCode] = useState('')
-    const [stock, setStock] = useState({})
+    /*const [stock, setStock] = useState({})
     const [images, setImages] = useState([])
     const [features, setFeatures] = useState([])
-    const [care, setCare] = useState([])
+    const [care, setCare] = useState([])*/
 
     const handleClick = async () => {
         const newProduct = {
@@ -27,10 +27,10 @@ const ProductCreate = () => {
             subCategory,
             price,
             code,
-            stock,
+            /*stock,
             images,
             features,
-            care,
+            care,*/
         }
         try {
             await axiosClient.post('/api/product', newProduct)
