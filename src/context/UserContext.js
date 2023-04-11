@@ -74,6 +74,7 @@ export const UserProvider = ({ children }) => {
     const logoutUser = () => {
         localStorage.removeItem('token')
         localStorage.removeItem('user')
+        localStorage.removeItem("__paypal_storage__")
         setUser(null)
         setAuthStatus(false)
         return <Navigate to="/login" />

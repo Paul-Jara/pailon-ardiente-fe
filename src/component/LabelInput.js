@@ -1,6 +1,6 @@
 import React from "react"
 
-const LabelInput = ({ labelText, type, setter, defaultValue, name, autoComplete, placeholder, readOnly }) => {
+const LabelInput = ({ name, labelText, type, setter, defaultValue, autoComplete, placeholder, readOnly }) => {
     return (
         <div className="form-group">
             <label htmlFor={name} className="form-label">
@@ -13,7 +13,7 @@ const LabelInput = ({ labelText, type, setter, defaultValue, name, autoComplete,
                 name={name}
                 id={name}
                 autoComplete={autoComplete}
-                placeholder={placeholder} 
+                placeholder={placeholder}
                 readOnly={readOnly === "true"}
                 className="form-control"
             />

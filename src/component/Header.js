@@ -27,8 +27,6 @@ export const Header = () => {
                                     <li className="nav-item"><Link to='/catalog/' className="nav-link text-white">Catálogo</Link></li>
                                     <li className="nav-item"><Link to='/cart' className="nav-link text-white">Carrito</Link></li>
                                     <li className="nav-item"><Link to='/orders' className="nav-link text-white">Mi ordenes</Link></li>
-                                    <li className="nav-item"><Link to='/users' className="nav-link text-white">Usuarios</Link></li>
-                                    <li className="nav-item"><Link to='/admin/orders' className="nav-link text-white">Administrar ordenes</Link></li>
                                 </>
                             }
                             {
@@ -44,6 +42,18 @@ export const Header = () => {
                                     <li className="nav-item"><Link to='/register' className="nav-link text-white">Registro</Link></li>
                                     <li className="nav-item"><Link to='/login' className="nav-link text-white">Iniciar sesión</Link></li>
                                 </>
+                            }
+                            {authStatus &&
+                                <li class="nav-item dropdown">
+                                    <button class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Administración
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                        <li><Link to='/admin/users' className="dropdown-item text-white">Usuarios</Link></li>
+                                        <li><Link to='/admin/orders' className="dropdown-item text-white">Administrar ordenes</Link></li>
+                                        <li><Link to='/admin/product/create' className="dropdown-item text-white">Crear productos</Link></li>
+                                    </ul>
+                                </li>
                             }
                         </ul>
                     </div>

@@ -43,6 +43,7 @@ const ProductAdd = () => {
                     defaultValue={quantity}
                     name="quantity" />
                 <button onClick={addToCart} className="btn">Agregar al carrito</button>
+                <button onClick={() => window.history.back()} className="btn">Volver</button>
             </article>
         </section>
     )

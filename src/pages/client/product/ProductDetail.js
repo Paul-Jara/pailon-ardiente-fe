@@ -22,7 +22,6 @@ const ProductDetail = () => {
     return (
         <section>
             <article>
-
                 {product && <ProductViewDetail product={product} />}
                 <button onClick={() => window.history.back()} className="btn">Volver</button>
             </article>
