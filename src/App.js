@@ -19,6 +19,7 @@ import OrderAdmin from './pages/admin/OrderAdmin'
 import ProductDetail from './pages/client/product/ProductDetail'
 import OrderVerify from './pages/client/order/OrderVerify'
 import ProductCreate from './pages/admin/ProductCreate'
+import AdminRoute from './component/auth/AdminRoute'
 
 const App = () => {
   return (
@@ -40,10 +41,12 @@ const App = () => {
             <Route path='/order/verify' element={<OrderVerify />} />
             <Route path='/order/success' element={<MessageSuccess />} />
             <Route path='/order/:orderId' element={<Order />} />
+            <Route element={<AdminRoute />}>
             <Route path='/admin/order/:orderId' element={<OrderAdmin />} />
-            <Route path='/admin/orders' element={<OrdersAdmin />} />
-            <Route path='/admin/users' element={<Users />} />
-            <Route path='/admin/product/create' element={<ProductCreate />} />
+              <Route path='/admin/orders' element={<OrdersAdmin />} />
+              <Route path='/admin/users' element={<Users />} />
+              <Route path='/admin/product/create' element={<ProductCreate />} />
+            </Route>
           </Route>
         </Route>
       </Routes>

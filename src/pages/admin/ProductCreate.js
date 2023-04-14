@@ -1,6 +1,10 @@
 import { useState } from "react"
 import axiosClient from "../../config/axios"
 import LabelInput from "../../component/LabelInput"
+import ProductStock from "../../component/product/ProductStock"
+import ProductImages from "../../component/product/ProductImages"
+import Editor from "../../component/Editor"
+import LabelInputList from "../../component/LabelInputList"
 
 const ProductCreate = () => {
 
@@ -9,13 +13,13 @@ const ProductCreate = () => {
     const [description, setDescription] = useState('')
     const [vendor, setVendor] = useState('')
     const [category, setCategory] = useState('')
-    const [subCategory, setSubCategory] = useState('')
+    const [subCategories, setSubCategories] = useState([])
     const [price, setPrice] = useState('')
     const [code, setCode] = useState('')
-    /*const [stock, setStock] = useState({})
+    const [stock, setStock] = useState([])
     const [images, setImages] = useState([])
     const [features, setFeatures] = useState([])
-    const [care, setCare] = useState([])*/
+    const [care, setCare] = useState([])
 
     const handleClick = async () => {
         const newProduct = {
@@ -24,22 +28,22 @@ const ProductCreate = () => {
             description,
             vendor,
             category,
-            subCategory,
+            subCategories,
             price,
             code,
-            /*stock,
+            stock,
             images,
             features,
-            care,*/
+            care
         }
         try {
+            console.log(JSON.stringify(newProduct))
             await axiosClient.post('/api/product', newProduct)
-            console.log('Product saved successfully!')
+            alert('Ok')
         } catch (err) {
             console.error('Error saving product: ', err)
         }
     }
-
 
     return (
         <section>
@@ -49,11 +53,14 @@ const ProductCreate = () => {
                 <LabelInput name="description" labelText="Descripción" setter={setDescription} type="text" />
                 <LabelInput name="vendor" labelText="Fabricante" setter={setVendor} type="text" />
                 <LabelInput name="category" labelText="Categoría" setter={setCategory} type="text" />
-                <LabelInput name="subCategory" labelText="Sub categoría" setter={setSubCategory} type="text" />
+                <LabelInputList setParentSubCategories={setSubCategories} />
                 <LabelInput name="price" labelText="Precio" setter={setPrice} type="text" />
                 <LabelInput name="code" labelText="SKU" setter={setCode} type="text" />
-                {/*<LabelInput name="name" labelText="Nombre" setter={setName} type="text" />*/}
-                <button onClick={handleClick} type="button" className="btn ">Crear</button>
+                <ProductStock setParentStock={setStock} />
+                <ProductImages setParentImages={setImages} />
+                <Editor labelText="Características" defaultValue={features} setter={setFeatures} />
+                <Editor labelText="Cuidados" defaultValue={care} setter={setCare} />
+                <button onClick={handleClick} type="button" className="btn">Crear</button>
             </article>
         </section>
     )

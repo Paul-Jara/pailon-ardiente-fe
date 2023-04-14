@@ -7,7 +7,7 @@ const PrivateRoute = () => {
     const [used, setUsed] = useState()
 
     useEffect(() => {
-        if(!used) {
+        if (!used) {
             verifyToken()
             setUsed(true)
         }

@@ -1,12 +1,13 @@
 import React from "react"
 
-const LabelInput = ({ name, labelText, type, setter, defaultValue, autoComplete, placeholder, readOnly }) => {
+const LabelInput = ({ name, labelText, type, setter, defaultValue, autoComplete, placeholder, readOnly, reference }) => {
     return (
         <div className="form-group">
             <label htmlFor={name} className="form-label">
                 {labelText}:
             </label>
             <input
+                ref={reference}
                 onChange={(e) => setter(e.target.value)}
                 defaultValue={defaultValue}
                 type={type}

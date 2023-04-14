@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { UserContext } from "../context/UserContext"
 
 export const Header = () => {
-    const { logoutUser, authStatus } = useContext(UserContext)
+    const { logoutUser, authStatus, user } = useContext(UserContext)
 
     return (
         <header className="sticky-top container bg-dark">
@@ -43,12 +43,12 @@ export const Header = () => {
                                     <li className="nav-item"><Link to='/login' className="nav-link text-white">Iniciar sesión</Link></li>
                                 </>
                             }
-                            {authStatus &&
-                                <li class="nav-item dropdown">
-                                    <button class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" aria-expanded="false">
+                            {authStatus && user?.role === 'admin' &&
+                                <li className="nav-item dropdown">
+                                    <button className="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" aria-expanded="false">
                                         Administración
                                     </button>
-                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                    <ul className="dropdown-menu dropdown-menu-dark">
                                         <li><Link to='/admin/users' className="dropdown-item text-white">Usuarios</Link></li>
                                         <li><Link to='/admin/orders' className="dropdown-item text-white">Administrar ordenes</Link></li>
                                         <li><Link to='/admin/product/create' className="dropdown-item text-white">Crear productos</Link></li>

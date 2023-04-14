@@ -28,9 +28,9 @@ const ProductViewDetail = ({ product }) => {
                     <div>
                         <h3>Stock:</h3>
                         <ul>
-                            {Object.keys(product.stock).map(key => (
-                                <li key={'productId_' + key}>
-                                    {key}: {product.stock[key]}
+                            {product.stock.map((item, index) => (
+                                <li key={'productId_' + index}>
+                                    {item.sizeLetters}{item.sizeNumber} {item.color}: {item.quantity}
                                 </li>
                             ))}
                         </ul>
@@ -42,8 +42,8 @@ const ProductViewDetail = ({ product }) => {
                             <img className="img-fluid" src={mainImage?.url} alt="adult-product" />
                         </div>
                         <div className="col-lg-4">
-                            <div className="row">
-                                {product.images.map((image, index) => (
+                            {product.images.map((image, index) => (
+                                <div className="row">
                                     <div className="col-3" key={'images_' + index}>
                                         <img
                                             className="img-fluid mb-3"
@@ -52,27 +52,16 @@ const ProductViewDetail = ({ product }) => {
                                             onClick={() => handleSmallImageClick(index)}
                                         />
                                     </div>
-                                ))}
-                            </div>
+                                </div>
+                            ))}
+
                         </div>
                     </div>
                 </div>}
-
-                {product.features && product.features.length > 0 && <ul>
-                    {product.features.map((feature, index) => (
-                        <li key={`feature_${index}`}>{feature}</li>
-                    ))}
-                </ul>}
-                {product.care && product.care.length > 0 && (
-                    <div>
-                        <h3>Care Instructions:</h3>
-                        <ul>
-                            {product.care.map(instruction => (
-                                <li key={`instruction_${instruction}`}>{instruction}</li>
-                            ))}
-                        </ul>
-                    </div>
-                )}
+                <h3>Características:</h3>
+                {product.features &&<div dangerouslySetInnerHTML={{ __html: product.features }}></div>}
+                <h3>Instrucciones de cuidado</h3>
+                {product.care &&<div dangerouslySetInnerHTML={{ __html: product.care }}></div>}
             </div>
         </div>
     )
