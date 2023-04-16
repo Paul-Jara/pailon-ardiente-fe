@@ -28,15 +28,15 @@ const CategoryMenu = () => {
                         {
                             categories.map((category, index) => {
                                 return (
-                                    <li key={`category_${index}`} className="nav-item dropdown">
+                                    <li key={`category_${category.name}_${index}`} className="nav-item dropdown">
                                         <Link to={`/catalog/${category.keys}`} className="nav-link dropdown-toggle"
                                             role="button" data-bs-toggle="dropdown" aria-expanded="false">{category.name}
                                         </Link>
                                         {category.items && 
-                                            <ul className="dropdown-menu" aria-labelledby="navbarDropdown" key={category.name}>
+                                            <ul className="dropdown-menu" aria-labelledby="navbarDropdown" key={`${category.name}_${index}`}>
                                                 {category.items.map((subCategory, index) => {
                                                     return (
-                                                        <li>
+                                                        <li key={`subCategory_${index}`}>
                                                             <Link className="dropdown-item" to={`/catalog/${subCategory.keys}`}>{subCategory.name}</Link>
                                                         </li>
                                                     )
