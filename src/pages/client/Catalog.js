@@ -5,22 +5,27 @@ import { useParams } from "react-router-dom"
 import CategoryMenu from "../../component/CategoryMenu"
 
 const Catalog = () => {
-    const { category } = useParams()
+    const { subCategories } = useParams()
     const [products, setProducts] = useState([])
 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await axiosClient.get('/api/product/filter', {
-                    params: { category }
-                })
-                setProducts(res.data.data)
+                if (subCategories) {
+                    const res = await axiosClient.get('/api/product/sub-categories', {
+                        params: { subCategories }
+                    })
+                    setProducts(res.data.data)
+                } else {
+                    const res = await axiosClient.get('/api/product')
+                    setProducts(res.data.data)
+                }
             } catch (error) {
                 console.log(error)
             }
         }
         fetchProducts()
-    }, [category])
+    }, [subCategories])
 
     return (
         <section className="row">
@@ -29,8 +34,7 @@ const Catalog = () => {
             </article>
             <article className="col">
                 <Category
-                    key={category}
-                    category={category}
+                    category={subCategories}
                     products={products} />
             </article>
         </section>

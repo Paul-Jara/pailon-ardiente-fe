@@ -44,7 +44,7 @@ const ProductImages = ({ setParentImages }) => {
             </div>
             <div className="col">
                 <label>Imagenes</label>
-                <lu>
+                <ul>
                     {images.length > 0 && images.map((item, index) => {
                         return (
                             <li key={`image_${index}`}>
@@ -60,7 +60,7 @@ const ProductImages = ({ setParentImages }) => {
                         )
                     })
                     }
-                </lu>
+                </ul>
             </div>
         </div>
     )

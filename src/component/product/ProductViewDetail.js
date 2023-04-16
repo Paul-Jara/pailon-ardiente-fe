@@ -43,7 +43,7 @@ const ProductViewDetail = ({ product }) => {
                         </div>
                         <div className="col-lg-4">
                             {product.images.map((image, index) => (
-                                <div className="row">
+                                <div className="row" key={`image_${index}`}>
                                     <div className="col-3" key={'images_' + index}>
                                         <img
                                             className="img-fluid mb-3"

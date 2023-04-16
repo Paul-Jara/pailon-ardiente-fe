@@ -17,7 +17,7 @@ const LabelInputList = ({ setParentSubCategories }) => {
     const handleAddSubCategory = () => {
         const newSubCategories = [...subCategories, subCategory]
         setSubCategories(newSubCategories)
-        setSubCategories(newSubCategories)
+        setParentSubCategories(newSubCategories)
         clearData()
     }
 
@@ -36,7 +36,7 @@ const LabelInputList = ({ setParentSubCategories }) => {
             </div>
             <div className="col">
                 <label>Subcategorias</label>
-                <lu>
+                <ul>
                     {subCategories.length > 0 && subCategories.map((item, index) => {
                         return (
                             <li key={`sub_category_${index}`}>
@@ -47,7 +47,7 @@ const LabelInputList = ({ setParentSubCategories }) => {
                         )
                     })
                     }
-                </lu>
+                </ul>
             </div>
         </div>
     )

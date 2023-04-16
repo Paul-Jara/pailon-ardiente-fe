@@ -108,7 +108,7 @@ const ProductStock = ({ setParentStock }) => {
             </div>
             <div className="col">
                 <label>Stock</label>
-                <lu>
+                <ul>
                     {stock.length > 0 && stock.map((item, index) => {
                         return <li key={`itemStock_${index}`}>
                             {item.sizeNumber ? `Tamaño ${item.sizeNumber}cm ` : ''}
@@ -119,7 +119,7 @@ const ProductStock = ({ setParentStock }) => {
                         </li>
                     })
                     }
-                </lu>
+                </ul>
             </div>
         </div>
     )
