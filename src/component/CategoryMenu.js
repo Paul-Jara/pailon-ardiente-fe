@@ -20,7 +20,9 @@ const CategoryMenu = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-products" aria-controls="nav-products" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                        data-bs-target="#nav-products" aria-controls="nav-products" 
+                        aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="nav-products">
@@ -43,7 +45,6 @@ const CategoryMenu = () => {
                                                 })}
                                             </ul>
                                         }
-
                                     </li>
                                 )
                             })
